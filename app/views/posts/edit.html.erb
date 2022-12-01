@@ -1,8 +1,8 @@
-<%= form_with(model: @posts, local: true) do |form| %>
+<h2>Edit your meow!</h2>
+<%= form_with(model: @post, local: true) do |form| %>
     <div class="post_content">
       <%= form.label :content %>
       <%= form.text_field :content %>
     </div>
     <%= form.submit %>
   <% end %>
-  <%= link_to "check your meows!", posts_path %>
