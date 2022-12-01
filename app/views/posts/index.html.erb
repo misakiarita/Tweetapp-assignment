@@ -1,0 +1,13 @@
+<h1>"Your meows"</h1>
+<table>
+  <tr>
+    <th>meow!</th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.content %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'New meow!', new_post_path %>
