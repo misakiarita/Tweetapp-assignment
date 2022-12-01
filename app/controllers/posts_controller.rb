@@ -5,12 +5,20 @@ class PostsController < ApplicationController
     end
   
     def new
-        @posts = Post.new
+        @post = Post.new
     end
 
     def create
-        Post.create(post_params)
-        redirect_to new_post_path
+       @post = Post.new(post_params)
+        if params[:back]
+        render :new
+        else 
+            if @post.save
+                redirect_to new_post_path
+            else
+                render :new
+            end
+        end
     end
 
     def edit
@@ -35,6 +43,11 @@ class PostsController < ApplicationController
        @post = Post.find(params[:id]) 
        @post.destroy
        redirect_to posts_path, notice:"Your meow deleted!"
+    end
+
+    def confirm
+        @post = Post.new(post_params)
+        render :new if @post.invalid?
     end
 
     private

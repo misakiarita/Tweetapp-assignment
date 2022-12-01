@@ -1,0 +1,7 @@
+<h3>Confirm your meow!</h3>
+
+<%= form_with(model: @post, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <p>meow:<%= @post.content %></p>
+  <%= form.submit  "meow!" %>
+<% end %>
