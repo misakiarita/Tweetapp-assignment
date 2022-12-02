@@ -1,5 +1,8 @@
-.page {text-align:center;}
+.page {text-align:center;
+        background-color: #e2edda;
+        color: #053614;}
 table {margin: auto;}
+ul {list-style: none;}
 
 
 /*
