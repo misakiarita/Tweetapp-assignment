@@ -9,9 +9,9 @@ class PostsController < ApplicationController
     end
 
     def create
-       @post = Post.new(post_params)
+        @post = Post.new(post_params)
         if params[:back]
-        render :new
+            render :new
         else 
             if @post.save
                 redirect_to new_post_path
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
         if @post.update(post_params)
             redirect_to post_path, notice: "Your meow edited!"
         else
-      render :edit
+            render :edit
         end
     end
 
